@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="available-routes">
+        <h2>Available routes:</h2>
+        <h2>/names</h2>
+            <p>Returns a list of sample names in the format
+                [
+                    "BB_940",
+                    "BB_941",
+                    "BB_943",
+                    "BB_944",
+                    "BB_945",
+                    "BB_946",
+                    "BB_947",
+                    ...
+                ]
+            </p>
+        <h2>/otu</h2>
+            <p>Returns a list of OTU descriptions in the following format
+
+                [
+                    "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
+                    "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
+                    "Bacteria",
+                    "Bacteria",
+                    "Bacteria",
+                    ...
+                ]
+            </p>
+        <h2>/metadata/&lt;sample&gt;</h2>
+            <p> Args: Sample in the format: `BB_940`
+
+                Returns a json dictionary of sample metadata in the format
+            
+                {
+                    AGE: 24,
+                    BBTYPE: "I",
+                    ETHNICITY: "Caucasian",
+                    GENDER: "F",
+                    LOCATION: "Beaufort/NC",
+                    SAMPLEID: 940
+                }
+            </p>
+            
+    </div>
+    <div id="plot">
+        <select id="selDataset"></select>
+    </div> 
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>
